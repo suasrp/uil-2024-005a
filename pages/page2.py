@@ -1,20 +1,20 @@
-from navigation import make_sidebar
-import streamlit as st
+#from navigation import make_sidebar
+#import streamlit as st
 
-make_sidebar()
+#make_sidebar()
 
-st.write(
+#st.write(
     """
 # 👍 6th Grade - Spelling Game
 
-This is a secret page that only logged-in users can see.
+#This is a secret page that only logged-in users can see.
 
-Super duper secret.
+#Super duper secret.
 
-Shh....
+#Shh....
 
-"""
-)
+#"""
+#)
 
 import streamlit as st
 from gtts import gTTS
