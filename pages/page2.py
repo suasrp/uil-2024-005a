@@ -1,5 +1,6 @@
 from navigation import make_sidebar
 import streamlit as st
+from gtts import gTTS
 
 make_sidebar()
 
