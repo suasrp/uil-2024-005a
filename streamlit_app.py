@@ -6,7 +6,7 @@ make_sidebar()
 
 st.title("Welcome to Cheatham Speller")
 
-st.write("Please log in to continue (username `test`, password `test`).")
+st.write("🔒 Please log in to continue (username `test`, password `test`).")
 
 username = st.text_input("Username")
 password = st.text_input("Password", type="password")
