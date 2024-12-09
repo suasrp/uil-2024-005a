@@ -5,9 +5,9 @@ make_sidebar()
 
 st.write(
     """
-# 👦 6th Grade List of Words
+# 🕵️ 6th Grade List of Words
 
-Words starting with 'A':
+<b> Words starting with 'A':</b>
 
 abbreviate, abnormality, abode, abrasion, abundantly, academic, accessory, accordion, acidic, acne, acrobat, adhesive, admirable, adoption, adversary, affected, affliction, affordable, agenda, airport, alimony, allergic, alliance, alpaca, alphabetical, amateur, amplify, amusing, animate, anklebone, annex, antibacterial, antibiotic, anxiety, apparition, appease, applause, aptitude, aquamarine, arcade, arrangement, assortment, athletic, attractive, auditory, avalanche, avocado
 
