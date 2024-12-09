@@ -153,3 +153,14 @@ words = [
     # ... add all other words here ...
     "zealous", "zestfully"
 ]
+
+# Create tests
+def create_tests(words_list):
+    tests = {}
+    for letter in 'abcdefghijklmnopqrstuvwxyz':
+        filtered_words = [word for word in words_list if word.startswith(letter)]
+        tests[letter] = filtered_words
+    return tests
+
+tests = create_tests(words)
+
