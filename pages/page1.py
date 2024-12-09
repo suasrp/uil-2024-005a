@@ -7,13 +7,15 @@ st.write(
     """
 # 🕵️ 6th Grade List of Words
 
-<b> Words starting with 'A':</b>
+Words starting with 'A':
 
 abbreviate, abnormality, abode, abrasion, abundantly, academic, accessory, accordion, acidic, acne, acrobat, adhesive, admirable, adoption, adversary, affected, affliction, affordable, agenda, airport, alimony, allergic, alliance, alpaca, alphabetical, amateur, amplify, amusing, animate, anklebone, annex, antibacterial, antibiotic, anxiety, apparition, appease, applause, aptitude, aquamarine, arcade, arrangement, assortment, athletic, attractive, auditory, avalanche, avocado
+
 
 Words starting with 'B':
 
 badminton, balky, barbarian, bareback, bargain, barrette, bashfulness, beacon, bedazzle, bedridden, beforehand, behavior, believable, beneficial, benevolent, biannual, bicultural, bicycle, billionaire, bimonthly, biodiversity, bionics, birthmark, blamable, blarney, blissful, blistering, bluebonnet, bolster, bonfire, boomerang, botulism, boulevard, bountiful, braggart, braille, brainstorm, brilliance, brisket, brooch, buffered, buffoonery, bulbous, bureau, burglarize
+
 
 Words starting with 'C':
 
