@@ -214,13 +214,6 @@ class SpellingApp:
         audio_file.seek(0)
         st.audio(audio_file, format='audio/mp3')
 
-    def view_words(self):
-        st.title("List of Words")
-        for letter, word_list in tests.items():
-            st.subheader(f"Words starting with '{letter.upper()}':")
-            st.write(", ".join(word_list))
-        st.button("Back to Main Menu", on_click=self.display_main_menu)
-
 # Initialize the application
 app = SpellingApp()
 app.display_main_menu()
