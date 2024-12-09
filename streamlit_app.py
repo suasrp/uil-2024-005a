@@ -1,3 +1,5 @@
+import streamlit as st
+
 make_sidebar()
 
 st.title("Welcome to Diamond Corp")
