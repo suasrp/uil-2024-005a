@@ -1,8 +1,10 @@
 import streamlit as st
+from time import sleep
+from navigation import make_sidebar
 
 make_sidebar()
 
-st.title("Welcome to Diamond Corp")
+st.title("Welcome to Cheatham Speller")
 
 st.write("Please log in to continue (username `test`, password `test`).")
 
