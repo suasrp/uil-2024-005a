@@ -1,9 +1,5 @@
 from navigation import make_sidebar
 import streamlit as st
-from gtts import gTTS
-import nltk
-from nltk.corpus import wordnet
-import io
 
 make_sidebar()
 
