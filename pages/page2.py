@@ -5,7 +5,7 @@ make_sidebar()
 
 st.write(
     """
-# 🕵️ EVEN MORE SECRET
+# 👍 6th Grade - Spelling Game
 
 This is a secret page that only logged-in users can see.
 
