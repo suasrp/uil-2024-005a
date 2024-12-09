@@ -7,25 +7,23 @@ st.write(
     """
 # 🕵️ 6th Grade List of Words
 
-Words starting with 'A':
+--Words starting with 'A':
 
 abbreviate, abnormality, abode, abrasion, abundantly, academic, accessory, accordion, acidic, acne, acrobat, adhesive, admirable, adoption, adversary, affected, affliction, affordable, agenda, airport, alimony, allergic, alliance, alpaca, alphabetical, amateur, amplify, amusing, animate, anklebone, annex, antibacterial, antibiotic, anxiety, apparition, appease, applause, aptitude, aquamarine, arcade, arrangement, assortment, athletic, attractive, auditory, avalanche, avocado
 
-
-Words starting with 'B':
+--Words starting with 'B':
 
 badminton, balky, barbarian, bareback, bargain, barrette, bashfulness, beacon, bedazzle, bedridden, beforehand, behavior, believable, beneficial, benevolent, biannual, bicultural, bicycle, billionaire, bimonthly, biodiversity, bionics, birthmark, blamable, blarney, blissful, blistering, bluebonnet, bolster, bonfire, boomerang, botulism, boulevard, bountiful, braggart, braille, brainstorm, brilliance, brisket, brooch, buffered, buffoonery, bulbous, bureau, burglarize
 
-
-Words starting with 'C':
+--Words starting with 'C':
 
 calculate, calendar, canopy, capitalism, cardiac, carnation, cartridge, cataract, cavernous, centimeter, ceremony, chaplain, charitable, choppiness, cinema, circulation, circumstance, clearance, clergy, clincher, closure, cohesion, coincidence, colander, columnist, combustion, commercial, communicable, commute, complaint, concentrate, concerto, confirmed, congratulate, connection, connive, consultation, convention, convoy, corrode, corruption, cramming, creative, critical, curiosity, currency, curtail
 
-Words starting with 'D':
+--Words starting with 'D':
 
 damask, dauntless, debonair, debt, decagon, deceit, declining, deductible, deflate, deformity, dehydrate, delivery, democracy, deodorant, desperate, detestable, development, devotion, diagram, dictation, dietary, diligent, diorama, discipline, discreet, disembark, disinfect, dispensable, disregard, district, divergence, doleful, domain, dominance, dosage, downcast, draftsman, drone, dumpling, dwindle, dynasty
 
-Words starting with 'E':
+-- Words starting with 'E':
 
 earliest, earphone, earsplitting, editorial, effective, egoism, elaborate, elapse, elasticity, electromagnet, eligible, emanate, embroidery, emergency, emotional, employee, encore, endear, endurance, energetic, engagement, enjoyably, enormity, entirety, environment, episode, equate, erase, escapism, estimate, ethical, everglade, evict, evidence, excel, exercising, exhale, existence, expenditure, experience, exploration, expound, extremity
 
