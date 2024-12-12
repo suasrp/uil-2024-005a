@@ -4,7 +4,7 @@ from navigation import make_sidebar
 
 make_sidebar()
 
-st.title("Welcome to Cheatham Speller β")
+st.title("Welcome to Cheatham Speller β wipS")
 
 st.write("🔒 Please log in to continue.")
 
