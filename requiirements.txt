@@ -1,4 +1,6 @@
-streamlit>=1.31.0
-flask
-gtts
-nltk
+
+streamlit==1.19.0
+openai==0.27.0
+requests==2.28.1
+pyttsx3==2.90
+pydub==0.25.1
