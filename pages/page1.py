@@ -1,6 +1,4 @@
 import streamlit as st
-import pyttsx3
-import openai
 import requests
 from navigation import make_sidebar  # Import sidebar function
 
@@ -16,36 +14,33 @@ ALPHABET_TESTS = {
     # Add more letters and words...
 }
 
-openai.api_key = "your_openai_api_key"
-
-# Function for pronunciation using TTS
+# Function for pronunciation using Llama3 or Phi3
 def pronounce_word(word):
-    engine = pyttsx3.init()
-    engine.say(word)
-    engine.runAndWait()
+    url = f"https://api.llama3.com/tts?text={word}&voice=en_us_male"  # Replace with real free API
+    response = requests.get(url)
+    if response.status_code == 200:
+        st.audio(response.content, format='audio/mp3')
+    else:
+        st.error("Error fetching pronunciation.")
 
-# Function to get definition using OpenAI
+# Function to get definition using Llama3 or Phi3
 def get_definition(word):
-    try:
-        response = openai.Completion.create(
-            model="text-davinci-003",
-            prompt=f"Define the word: {word}",
-            max_tokens=50
-        )
-        return response.choices[0].text.strip()
-    except Exception as e:
+    url = f"https://api.phi3.com/definition?word={word}"  # Replace with real free API
+    response = requests.get(url)
+    if response.status_code == 200:
+        definition = response.json().get("definition", "No definition found.")
+        return definition
+    else:
         return "Error fetching definition."
 
-# Function to get example sentence using OpenAI
+# Function to get example sentence using Llama3 or Phi3
 def get_example_sentence(word):
-    try:
-        response = openai.Completion.create(
-            model="text-davinci-003",
-            prompt=f"Use the word '{word}' in a sentence.",
-            max_tokens=50
-        )
-        return response.choices[0].text.strip()
-    except Exception as e:
+    url = f"https://api.phi3.com/example?word={word}"  # Replace with real free API
+    response = requests.get(url)
+    if response.status_code == 200:
+        example = response.json().get("example", "No example sentence found.")
+        return example
+    else:
         return "Error fetching example sentence."
 
 # Streamlit interface for the test
