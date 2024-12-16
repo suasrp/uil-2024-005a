@@ -27,14 +27,21 @@ else:
 # Button to play pronunciation via a free API like Llama3, Phi3, or other GPT-based API
 # Example: Using an external service for free pronunciation, replace with real API if available
 
+# Function to fetch pronunciation
 def play_pronunciation(word):
     # Example URL for free pronunciation API (replace with actual working API)
     # Llama3, Phi3, or Free GPT API may provide pronunciation features
-    api_url = f"https://api.some-free-pronunciation-service.com/pronounce?word={word}"
+    # api_url = f"https://api.some-free-pronunciation-service.com/pronounce?word={word}"
+
+    api_url = f"https://api.llamacloud.com/v1/speech/pronounce?word={word}"
+
+    headers = {
+        'Authorization': 'Bearer llx-qzM2fHBXD6hl2xyeRS6JzJafF2mKviaxtTJxWdY6nIAouF7a',
+    }
 
     # Send request to pronunciation API
     try:
-        response = requests.get(api_url)
+        response = requests.get(api_url, headers=headers)
         if response.status_code == 200:
             audio_url = response.json().get('audio_url', None)
             if audio_url:
