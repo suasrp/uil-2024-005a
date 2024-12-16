@@ -1,72 +1,90 @@
 import streamlit as st
 import requests
-from navigation import make_sidebar  # Import sidebar function
+from navigation import make_sidebar, check_user_inactivity  # Import necessary functions
+
+# Check for inactivity and logout if necessary
+check_user_inactivity()
 
 # Add sidebar
 make_sidebar()
 
-# Example words list (Replace with your dynamic word list)
-ALPHABET_TESTS = {
-    'a': ["abbreviate", "abnormality"],
-    'b': ["badminton", "balky"],
-    'c': ["calculate", "calendar"],
-    'd': ["damask", "dauntless"],
-    # Add more letters and words...
-}
+# Title for the Page 1
+st.write("""
+# Page 1 - Word Definition, Example, and Pronunciation
+""")
 
-# Function for pronunciation using Llama3 or Phi3
-def pronounce_word(word):
-    url = f"https://api.llama3.com/tts?text={word}&voice=en_us_male"  # Replace with real free API
-    response = requests.get(url)
-    if response.status_code == 200:
-        st.audio(response.content, format='audio/mp3')
-    else:
-        st.error("Error fetching pronunciation.")
+# Word input from the user
+word = st.text_input("Enter a word:")
 
-# Function to get definition using Llama3 or Phi3
-def get_definition(word):
-    url = f"https://api.phi3.com/definition?word={word}"  # Replace with real free API
-    response = requests.get(url)
-    if response.status_code == 200:
-        definition = response.json().get("definition", "No definition found.")
-        return definition
-    else:
-        return "Error fetching definition."
+if word:
+    st.session_state.current_word = word  # Store word for further pages
 
-# Function to get example sentence using Llama3 or Phi3
-def get_example_sentence(word):
-    url = f"https://api.phi3.com/example?word={word}"  # Replace with real free API
-    response = requests.get(url)
-    if response.status_code == 200:
-        example = response.json().get("example", "No example sentence found.")
-        return example
-    else:
-        return "Error fetching example sentence."
+    # Fetch definition using Hugging Face API
+    def get_definition(word):
+        api_url = f"https://api-inference.huggingface.co/models/bert-base-uncased"
+        headers = {
+            'Authorization': 'Bearer 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',
+        }
+        payload = {
+            "inputs": f"Define the word {word}",
+        }
 
-# Streamlit interface for the test
-st.write(
-    """
-# 📝 5th-6th Grade - List of Words
-    """
-)
+        try:
+            response = requests.post(api_url, headers=headers, json=payload)
+            if response.status_code == 200:
+                definition = response.json()[0].get('generated_text', 'No definition found.')
+                st.write(f"**Definition of {word}:** {definition}")
+            else:
+                st.error(f"Failed to fetch definition: {response.status_code}")
+        except Exception as e:
+            st.error(f"Error occurred while fetching definition: {e}")
 
-st.title("Alphabet Spelling Test")
+    # Fetch example sentence using Hugging Face API
+    def get_example_sentence(word):
+        api_url = f"https://api-inference.huggingface.co/models/bert-base-uncased"
+        headers = {
+            'Authorization': 'Bearer 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',
+        }
+        payload = {
+            "inputs": f"Use {word} in a sentence.",
+        }
 
-letter = st.selectbox("Choose a letter", list(ALPHABET_TESTS.keys()))
-word_list = ALPHABET_TESTS[letter]
+        try:
+            response = requests.post(api_url, headers=headers, json=payload)
+            if response.status_code == 200:
+                example_sentence = response.json()[0].get('generated_text', 'No example sentence found.')
+                st.write(f"**Example sentence for {word}:** {example_sentence}")
+            else:
+                st.error(f"Failed to fetch example sentence: {response.status_code}")
+        except Exception as e:
+            st.error(f"Error occurred while fetching example sentence: {e}")
 
-word = st.selectbox("Choose a word", word_list)
+    # Fetch pronunciation using LlamaCloud API
+    def play_pronunciation(word):
+        api_url = f"https://api.llamacloud.com/v1/speech/pronounce?word={word}"
+        headers = {
+            'Authorization': 'Bearer llx-qzM2fHBXD6hl2xyeRS6JzJafF2mKviaxtTJxWdY6nIAouF7a',
+        }
 
-# Pronounce word
-if st.button("Pronounce"):
-    pronounce_word(word)
+        try:
+            response = requests.get(api_url, headers=headers)
+            if response.status_code == 200:
+                audio_url = response.json().get('audio_url', None)
+                if audio_url:
+                    st.audio(audio_url, format='audio/mp3')
+                else:
+                    st.error("Pronunciation audio not available.")
+            else:
+                st.error("Failed to fetch pronunciation.")
+        except Exception as e:
+            st.error(f"Error occurred while fetching pronunciation: {e}")
 
-# Get definition
-if st.button("Get Definition"):
-    definition = get_definition(word)
-    st.write(definition)
+    # Display Definition and Example Sentence
+    get_definition(word)
+    get_example_sentence(word)
 
-# Get example sentence
-if st.button("Get Example Sentence"):
-    example_sentence = get_example_sentence(word)
-    st.write(example_sentence)
+    # Button to trigger pronunciation
+    if st.button("Pronounce Word"):
+        play_pronunciation(word)
+else:
+    st.write("Please enter a word to get the definition, example sentence, and pronunciation.")
