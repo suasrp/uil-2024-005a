@@ -1,5 +1,8 @@
 import streamlit as st
-from navigation import make_sidebar  # Import the sidebar function
+from navigation import make_sidebar, check_user_inactivity   # Import the sidebar function
+
+# Check for inactivity and logout if necessary
+check_user_inactivity()
 
 # Add sidebar
 make_sidebar()
@@ -10,6 +13,8 @@ st.write(
 # 📝 Historical Misspelled Words
     """
 )
+
+# vNO CHANGE BELOW
 
 # Check if the user has any misspelled words stored in the session
 if 'incorrect_words' in st.session_state and st.session_state.incorrect_words:
