@@ -40,6 +40,30 @@ def make_sidebar():
             # redirect them to the login page
             st.switch_page("streamlit_app.py")
 
+# BELOW
+
+# Function to check user inactivity and automatically log out after 15 minutes
+def check_user_inactivity():
+    inactivity_limit = 15 * 60  # 15 minutes in seconds
+    current_time = time.time()
+
+    # Track last activity time
+    if 'last_activity_time' not in st.session_state:
+        st.session_state.last_activity_time = current_time
+
+    # Calculate inactivity time
+    inactivity_time = current_time - st.session_state.last_activity_time
+
+    # If the user is inactive for too long, log them out
+    if inactivity_time > inactivity_limit:
+        st.session_state.clear()  # Clear session state to log the user out
+        st.write("You have been logged out due to inactivity.")
+        st.experimental_rerun()  # Rerun the app to reset the session
+
+    # Update the last activity time
+    st.session_state.last_activity_time = current_time   
+
+# ABOVE
 
 def logout():
     st.session_state.logged_in = False
