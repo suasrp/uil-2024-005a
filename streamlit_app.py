@@ -1,7 +1,11 @@
 import streamlit as st
 from time import sleep
-from navigation import make_sidebar
+from navigation import make_sidebar, check_user_inactivity  # Import necessary functions
 
+# Check for inactivity and logout if necessary
+check_user_inactivity()
+
+# Add sidebar
 make_sidebar()
 
 st.title("Welcome to Cheatham Speller β wipS")
