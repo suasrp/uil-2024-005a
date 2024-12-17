@@ -17,44 +17,53 @@ ALPHABET_TESTS = {
     # Add more letters and words...
 }
 
-# Fetch pronunciation using LlamaCloud API
+## Fetch pronunciation using LlamaCloud API
+# Fetch pronunciation using ElevenLabs API (Replaced with correct API)
 def play_pronunciation(word):
-    api_url = f"https://api.llamacloud.com/v1/speech/pronounce?word={word}"  # Replace with real free API
+    # api_url = f"https://api.llamacloud.com/v1/speech/pronounce?word={word}"  # Replace with real free API
+    api_url = f"https://api.wordnik.com/v4/word.json/{word}/definitions"
     headers = {
-            'Authorization': 'Bearer llx-qzM2fHBXD6hl2xyeRS6JzJafF2mKviaxtTJxWdY6nIAouF7a',
+            'Authorization': 'Bearer sk_0da51f2e22e6df77ffd9477976e0d683b88ebcd3571dd99a',
         }
 
-    response = requests.get(api_url)
+    response = requests.get(api_url, headers=headers)
     if response.status_code == 200:
         st.audio(response.content, format='audio/mp3')
     else:
         st.error("Error fetching pronunciation.")
 
-# Function to get definition using Hugging Face API
+## Function to get definition using Hugging Face API
+# Function to get definition using Wordnik API (Replaced with correct API)
 def get_definition(word):
-    api_url = f"https://api-inference.huggingface.co/models/bert-base-uncased"
+    # api_url = f"https://api-inference.huggingface.co/models/bert-base-uncased"
+    api_url = f"https://api.wordnik.com/v4/word.json/{word}/definitions"
     headers = {
-        'Authorization': 'Bearer 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',
+        'Authorization': 'Bearer cfkfozedk4amxz92tyh1boi833dv7t881s8df9aqvy5e5261h',
     }
     
-    response = requests.get(api_url)
+    response = requests.get(api_url, headers=headers)
     if response.status_code == 200:
-        definition = response.json().get("definition", "No definition found.")
+        # definition = response.json().get("definition", "No definition found.")
+        definition = response.json()[0].get("text", "No definition found.")
         return definition
     else:
         return "Error fetching definition."
 
-# Function to get example sentence using Hugging Face API
+## Function to get example sentence using Hugging Face API
+# Function to get example sentence using Wordnik API (Replaced with correct API)
 def get_example_sentence(word):
-    api_url = f"https://api-inference.huggingface.co/models/bert-base-uncased"
+    #api_url = f"https://api-inference.huggingface.co/models/bert-base-uncased"
+    api_url = f"https://api.wordnik.com/v4/word.json/{word}/definitions"    
     headers = {
-        'Authorization': 'Bearer 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',
+        'Authorization': 'Bearer cfkfozedk4amxz92tyh1boi833dv7t881s8df9aqvy5e5261h',
     }
     
-    response = requests.get(api_url)
+    response = requests.get(api_url, headers=headers)
     if response.status_code == 200:
-        example = response.json().get("example", "No example sentence found.")
-        return example
+        #example = response.json().get("example", "No example sentence found.")
+        #return example
+        example = response.json().get("examples", ["No example sentence found."])[0]
+        return example['text'] if example else "No example sentence found."
     else:
         return "Error fetching example sentence."
 
