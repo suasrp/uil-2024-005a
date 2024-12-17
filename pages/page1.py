@@ -74,7 +74,7 @@ word = st.selectbox("Choose a word", word_list)
 
 # Pronounce word
 if st.button("Pronounce"):
-    pronounce_word(word)
+    play_pronunciation(word)
 
 # Get definition
 if st.button("Get Definition"):
