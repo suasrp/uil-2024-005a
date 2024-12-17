@@ -33,10 +33,11 @@ def play_pronunciation(word):
     # Llama3, Phi3, or Free GPT API may provide pronunciation features
     # api_url = f"https://api.some-free-pronunciation-service.com/pronounce?word={word}"
 
-    api_url = f"https://api.llamacloud.com/v1/speech/pronounce?word={word}"
+    #api_url = f"https://api.llamacloud.com/v1/speech/pronounce?word={word}"
+    api_url = f"https://api.elevenlabs.io/v1/text-to-speech/{word}"  # Replace with actual ElevenLabs API endpoint if different
 
     headers = {
-        'Authorization': 'Bearer llx-qzM2fHBXD6hl2xyeRS6JzJafF2mKviaxtTJxWdY6nIAouF7a',
+        'Authorization': 'Bearer sk_0da51f2e22e6df77ffd9477976e0d683b88ebcd3571dd99a',
     }
 
     # Send request to pronunciation API
