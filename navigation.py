@@ -40,7 +40,7 @@ def make_sidebar():
             # redirect them to the login page
             st.switch_page("streamlit_app.py")
 
-# BELOW
+# BELOW ADD
 
 # Function to check user inactivity and automatically log out after 15 minutes
 def check_user_inactivity():
@@ -63,7 +63,7 @@ def check_user_inactivity():
     # Update the last activity time
     st.session_state.last_activity_time = current_time   
 
-# ABOVE
+# ABOVE ADD
 
 def logout():
     st.session_state.logged_in = False
