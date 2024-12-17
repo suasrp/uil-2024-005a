@@ -1,5 +1,8 @@
 import streamlit as st
-from navigation import make_sidebar  # Import the sidebar function
+from navigation import make_sidebar, check_user_inactivity  # Import the sidebar function
+
+# Check for inactivity and logout if necessary
+check_user_inactivity()
 
 # Add sidebar
 make_sidebar()
@@ -65,6 +68,8 @@ if 'selected_words_for_retest' in st.session_state and st.session_state.selected
 
 else:
     st.write("It seems like there are no missed words in your session.")
+    
+    # v CHANGE BELOW - delete
     # Provide an option to go back to the home page
     if st.button("Go Back to Home"):
         st.session_state.selected_letter = None
