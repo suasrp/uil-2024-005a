@@ -8,21 +8,25 @@ check_user_inactivity()
 # Add sidebar
 make_sidebar()
 
-# Title for Page 2
-st.write("""
-# Page 2 - Continue with the Test or Select Other Words
-""")
+# Example alphabet test data
+ALPHABET_TESTS = {
+    'a': ["abbreviate", "abnormality"],
+    'b': ["badminton", "balky"],
+    'c': ["calculate", "calendar"],
+    'd': ["damask", "dauntless"],
+    # Add more letters and words...
+}
 
-# Display a message for the user
-st.write("This is Page 2. You can continue your test or explore other words.")
+st.write(
+    """
+# 📝 5th-6th Grade - List of Words
+    """
+)
 
-# Navigation buttons for user
-if st.button("Go to Word Definition Page"):
-    st.session_state.current_word = ''  # Clear current word for a new selection
-    st.write("Navigating to the Word Definition Page...")
-    st.experimental_rerun()  # Rerun the app to go back to the previous page
+st.title("Select Your Test")
+letter = st.selectbox("Select a letter", list(ALPHABET_TESTS.keys()))
+st.write(f"Selected Test: {letter.upper()}")
+st.write("Words in this test:")
+st.write(ALPHABET_TESTS[letter])
 
-if st.button("Go to the Test Complete Page"):
-    st.write("Navigating to the Test Completion Page...")
-    # Code for navigating to Test Complete page, for example:
-    st.experimental_rerun()  # Adjust to go to your desired page
+# You could add a function to track progress here
