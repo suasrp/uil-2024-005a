@@ -1,5 +1,5 @@
 import streamlit as st
-import requestshttps://github.com/suasrp/uil-spell-2024-006s
+import requests
 from navigation import make_sidebar, check_user_inactivity  # Import necessary functions and sidebar functions
 
 # Check for inactivity and logout if necessary
@@ -74,7 +74,7 @@ word = st.selectbox("Choose a word", word_list)
 
 # Pronounce word
 if st.button("Pronounce"):
-    pronounce = play_pronunciation(word)
+    play_pronunciation(word)
 
 # Get definition
 if st.button("Get Definition"):
