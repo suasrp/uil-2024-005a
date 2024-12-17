@@ -17,29 +17,41 @@ ALPHABET_TESTS = {
     # Add more letters and words...
 }
 
-# Function for pronunciation using Llama3 or Phi3
-def pronounce_word(word):
-    url = f"https://api.llama3.com/tts?text={word}&voice=en_us_male"  # Replace with real free API
-    response = requests.get(url)
+# Fetch pronunciation using LlamaCloud API
+def play_pronunciation(word):
+    api_url = f"https://api.llamacloud.com/v1/speech/pronounce?word={word}"  # Replace with real free API
+    headers = {
+            'Authorization': 'Bearer llx-qzM2fHBXD6hl2xyeRS6JzJafF2mKviaxtTJxWdY6nIAouF7a',
+        }
+
+    response = requests.get(api_url)
     if response.status_code == 200:
         st.audio(response.content, format='audio/mp3')
     else:
         st.error("Error fetching pronunciation.")
 
-# Function to get definition using Llama3 or Phi3
+# Function to get definition using Hugging Face API
 def get_definition(word):
-    url = f"https://api.phi3.com/definition?word={word}"  # Replace with real free API
-    response = requests.get(url)
+    api_url = f"https://api-inference.huggingface.co/models/bert-base-uncased"
+    headers = {
+        'Authorization': 'Bearer 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',
+    }
+    
+    response = requests.get(api_url)
     if response.status_code == 200:
         definition = response.json().get("definition", "No definition found.")
         return definition
     else:
         return "Error fetching definition."
 
-# Function to get example sentence using Llama3 or Phi3
+# Function to get example sentence using Hugging Face API
 def get_example_sentence(word):
-    url = f"https://api.phi3.com/example?word={word}"  # Replace with real free API
-    response = requests.get(url)
+    api_url = f"https://api-inference.huggingface.co/models/bert-base-uncased"
+    headers = {
+        'Authorization': 'Bearer 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',
+    }
+    
+    response = requests.get(api_url)
     if response.status_code == 200:
         example = response.json().get("example", "No example sentence found.")
         return example
