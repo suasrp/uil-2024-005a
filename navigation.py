@@ -1,4 +1,5 @@
 import streamlit as st
+import time
 from time import sleep
 from streamlit.runtime.scriptrunner import get_script_run_ctx
 from streamlit.source_util import get_pages
