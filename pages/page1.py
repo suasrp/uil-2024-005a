@@ -73,7 +73,7 @@ word_list = ALPHABET_TESTS[letter]
 word = st.selectbox("Choose a word", word_list)
 
 # Pronounce word
-if st.button("Pronounce"):
+if st.button("Pronounce word"):
     play_pronunciation(word)
 
 # Get definition
