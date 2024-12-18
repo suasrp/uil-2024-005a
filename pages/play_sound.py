@@ -24,35 +24,24 @@ if current_word:
 else:
     st.write("No word selected for pronunciation.")
 
-# Function to fetch pronunciation via ElevenLabs API
-def play_pronunciation(word):
-    api_url = "https://api.elevenlabs.io/v1/text-to-speech"  # Replace with actual ElevenLabs API endpoint if needed
-
-    headers = {
-        'Authorization': 'Bearer sk_llx-12345678901234567890123456789012345678901234',  # ElevenLabs API key
-        'Content-Type': 'application/json'
-    }
-
-    data = {
-        "text": word,  # The word to be pronounced
-        "voice": "en_us_male",  # Select the voice if needed
-        "output_format": "mp3"
-    }
-
+# Function to fetch pronunciation using ResponsiveVoice API
+def play_pronunciation_responsivevoice(word):
+    api_url = f"https://code.responsivevoice.org/getvoice.php?t={word}&lang=en&engine=responsivevoice"
+    
     try:
-        response = requests.post(api_url, json=data, headers=headers)
+        response = requests.get(api_url)
         if response.status_code == 200:
-            st.audio(response.content, format='audio/mp3')
+            st.audio(response.content, format='audio/mp3')  # Playing the audio directly
         else:
-            st.error(f"Error fetching pronunciation: {response.status_code}")
+            st.error(f"Error fetching pronunciation from ResponsiveVoice: {response.status_code}")
             st.write(response.text)
     except Exception as e:
-        st.error(f"Error occurred while fetching pronunciation: {e}")
+        st.error(f"Error occurred while fetching pronunciation from ResponsiveVoice: {e}")
 
-# Button to trigger pronunciation
-if st.button("Pronounce Word"):
+# Button to trigger pronunciation using ResponsiveVoice
+if st.button("Pronounce Word (ResponsiveVoice)"):
     if current_word:
-        play_pronunciation(current_word)
+        play_pronunciation_responsivevoice(current_word)
     else:
         st.warning("No word selected for pronunciation. Please go back and select a word.")
 
