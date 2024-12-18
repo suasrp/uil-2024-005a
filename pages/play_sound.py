@@ -24,19 +24,16 @@ if current_word:
 else:
     st.write("No word selected for pronunciation.")
 
-# Function to fetch pronunciation using ResponsiveVoice API
+# Function to fetch pronunciation using ResponsiveVoice (JavaScript approach)
 def play_pronunciation_responsivevoice(word):
-    api_url = f"https://code.responsivevoice.org/getvoice.php?t={word}&lang=en&engine=responsivevoice"
-    
-    try:
-        response = requests.get(api_url)
-        if response.status_code == 200:
-            st.audio(response.content, format='audio/mp3')  # Playing the audio directly
-        else:
-            st.error(f"Error fetching pronunciation from ResponsiveVoice: {response.status_code}")
-            st.write(response.text)
-    except Exception as e:
-        st.error(f"Error occurred while fetching pronunciation from ResponsiveVoice: {e}")
+    # Embed the ResponsiveVoice script into Streamlit using components
+    st.components.v1.html("""
+    <script src="https://code.responsivevoice.org/responsivevoice.js?key=Ytp4Wvua"></script>
+    <script>
+        // Use the responsiveVoice JavaScript function to speak the word
+        responsiveVoice.speak("{0}", "UK English Male");
+    </script>
+    """.format(word), height=0)  # Set height=0 to hide the script output
 
 # Button to trigger pronunciation using ResponsiveVoice
 if st.button("Pronounce Word (ResponsiveVoice)"):
