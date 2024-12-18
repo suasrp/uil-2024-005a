@@ -24,34 +24,28 @@ if current_word:
 else:
     st.write("No word selected for pronunciation.")
 
-# Button to play pronunciation via a free API like Llama3, Phi3, or other GPT-based API
-# Example: Using an external service for free pronunciation, replace with real API if available
-
-# Function to fetch pronunciation
+# Function to fetch pronunciation via ElevenLabs API
 def play_pronunciation(word):
-    # Example URL for free pronunciation API (replace with actual working API)
-    # Llama3, Phi3, or Free GPT API may provide pronunciation features
-    # api_url = f"https://api.some-free-pronunciation-service.com/pronounce?word={word}"
-
-    #api_url = f"https://api.llamacloud.com/v1/speech/pronounce?word={word}"
-    api_url = f"https://api.elevenlabs.io/v1/text-to-speech/{word}"  # Replace with actual ElevenLabs API endpoint if different
+    api_url = "https://api.elevenlabs.io/v1/text-to-speech"  # Replace with actual ElevenLabs API endpoint if needed
 
     headers = {
-        'Authorization': 'Bearer sk_0da51f2e22e6df77ffd9477976e0d683b88ebcd3571dd99a',
+        'Authorization': 'Bearer sk_llx-12345678901234567890123456789012345678901234',  # ElevenLabs API key
+        'Content-Type': 'application/json'
     }
 
-    # Send request to pronunciation API
+    data = {
+        "text": word,  # The word to be pronounced
+        "voice": "en_us_male",  # Select the voice if needed
+        "output_format": "mp3"
+    }
+
     try:
-        response = requests.get(api_url, headers=headers)
+        response = requests.post(api_url, json=data, headers=headers)
         if response.status_code == 200:
-            audio_url = response.json().get('audio_url', None)
-            if audio_url:
-                # Use the audio URL to play the pronunciation
-                st.audio(audio_url, format='audio/mp3')
-            else:
-                st.error("Pronunciation audio not available.")
+            st.audio(response.content, format='audio/mp3')
         else:
-            st.error("Failed to fetch pronunciation.")
+            st.error(f"Error fetching pronunciation: {response.status_code}")
+            st.write(response.text)
     except Exception as e:
         st.error(f"Error occurred while fetching pronunciation: {e}")
 
