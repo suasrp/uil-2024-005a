@@ -18,7 +18,7 @@ ALPHABET_TESTS = {
 }
 
 # Fetch pronunciation using ElevenLabs API
-def play_pronunciation(word):
+def play_pronunciation_elevenlabs(word):
     api_url = "https://api.elevenlabs.io/v1/text-to-speech"  # Replace with actual ElevenLabs API endpoint if needed
     headers = {
         'Authorization': 'Bearer sk_0da51f2e22e6df77ffd9477976e0d683b88ebcd3571dd99a',
@@ -40,6 +40,20 @@ def play_pronunciation(word):
             st.write(response.text)
     except Exception as e:
         st.error(f"Error occurred while fetching pronunciation: {e}")
+
+# Fetch pronunciation using ResponsiveVoice API
+def play_pronunciation_responsivevoice(word):
+    api_url = f"https://code.responsivevoice.org/getvoice.php?t={word}&lang=en&engine=responsivevoice"
+    
+    try:
+        response = requests.get(api_url)
+        if response.status_code == 200:
+            st.audio(response.content, format='audio/mp3')  # Playing the audio directly
+        else:
+            st.error(f"Error fetching pronunciation from ResponsiveVoice: {response.status_code}")
+            st.write(response.text)
+    except Exception as e:
+        st.error(f"Error occurred while fetching pronunciation from ResponsiveVoice: {e}")
 
 # Function to get definition using Wordnik API
 def get_definition(word):
@@ -95,10 +109,14 @@ word_list = ALPHABET_TESTS[letter]
 
 word = st.selectbox("Choose a word", word_list)
 
-# Pronounce word
-if st.button("Pronounce word"):
-    play_pronunciation(word)
+# Pronounce word using ElevenLabs
+if st.button("Pronounce word (ElevenLabs)"):
+    play_pronunciation_elevenlabs(word)
 
+# Pronounce word using ResponsiveVoice
+if st.button("Pronounce word (ResponsiveVoice)"):
+    play_pronunciation_responsivevoice(word)
+    
 # Get definition
 if st.button("Get Definition"):
     definition = get_definition(word)
