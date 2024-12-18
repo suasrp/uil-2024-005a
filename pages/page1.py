@@ -17,56 +17,70 @@ ALPHABET_TESTS = {
     # Add more letters and words...
 }
 
-## Fetch pronunciation using LlamaCloud API
-# Fetch pronunciation using ElevenLabs API (Replaced with correct API)
+# Fetch pronunciation using ElevenLabs API
 def play_pronunciation(word):
-    # api_url = f"https://api.llamacloud.com/v1/speech/pronounce?word={word}"  # Replace with real free API
-    api_url = f"https://api.wordnik.com/v4/word.json/{word}/definitions"
+    api_url = "https://api.elevenlabs.io/v1/text-to-speech"  # Replace with actual ElevenLabs API endpoint if needed
     headers = {
-            'Authorization': 'Bearer sk_0da51f2e22e6df77ffd9477976e0d683b88ebcd3571dd99a',
-        }
+        'Authorization': 'Bearer sk_0da51f2e22e6df77ffd9477976e0d683b88ebcd3571dd99a',
+        'Content-Type': 'application/json'
+    }
 
-    response = requests.get(api_url, headers=headers)
-    if response.status_code == 200:
-        st.audio(response.content, format='audio/mp3')
-    else:
-        st.error("Error fetching pronunciation.")
+    data = {
+        "text": word,  # The word to be pronounced
+        "voice": "en_us_male",  # Select the voice if needed
+        "output_format": "mp3"
+    }
 
-## Function to get definition using Hugging Face API
-# Function to get definition using Wordnik API (Replaced with correct API)
+    try:
+        response = requests.post(api_url, json=data, headers=headers)
+        if response.status_code == 200:
+            st.audio(response.content, format='audio/mp3')
+        else:
+            st.error(f"Error fetching pronunciation: {response.status_code}")
+            st.write(response.text)
+    except Exception as e:
+        st.error(f"Error occurred while fetching pronunciation: {e}")
+
+# Function to get definition using Wordnik API
 def get_definition(word):
-    # api_url = f"https://api-inference.huggingface.co/models/bert-base-uncased"
     api_url = f"https://api.wordnik.com/v4/word.json/{word}/definitions"
     headers = {
         'Authorization': 'Bearer cfkfozedk4amxz92tyh1boi833dv7t881s8df9aqvy5e5261h',
     }
     
-    response = requests.get(api_url, headers=headers)
-    if response.status_code == 200:
-        # definition = response.json().get("definition", "No definition found.")
-        definition = response.json()[0].get("text", "No definition found.")
-        return definition
-    else:
-        return "Error fetching definition."
+    try:
+        response = requests.get(api_url, headers=headers)
+        if response.status_code == 200:
+            definitions = response.json()
+            if definitions:
+                return definitions[0].get("text", "No definition found.")
+            else:
+                return "No definition found."
+        else:
+            return f"Error fetching definition: {response.status_code}"
+    except Exception as e:
+        return f"Error occurred while fetching definition: {e}"
 
-## Function to get example sentence using Hugging Face API
-# Function to get example sentence using Wordnik API (Replaced with correct API)
+# Function to get example sentence using Wordnik API
 def get_example_sentence(word):
-    #api_url = f"https://api-inference.huggingface.co/models/bert-base-uncased"
-    api_url = f"https://api.wordnik.com/v4/word.json/{word}/definitions"    
+    api_url = f"https://api.wordnik.com/v4/word.json/{word}/examples"
     headers = {
         'Authorization': 'Bearer cfkfozedk4amxz92tyh1boi833dv7t881s8df9aqvy5e5261h',
     }
     
-    response = requests.get(api_url, headers=headers)
-    if response.status_code == 200:
-        #example = response.json().get("example", "No example sentence found.")
-        #return example
-        example = response.json().get("examples", ["No example sentence found."])[0]
-        return example['text'] if example else "No example sentence found."
-    else:
-        return "Error fetching example sentence."
-
+    try:
+        response = requests.get(api_url, headers=headers)
+        if response.status_code == 200:
+            examples = response.json().get('examples', [])
+            if examples:
+                return examples[0].get("text", "No example sentence found.")
+            else:
+                return "No example sentence found."
+        else:
+            return f"Error fetching example sentence: {response.status_code}"
+    except Exception as e:
+        return f"Error occurred while fetching example sentence: {e}"
+        
 # Streamlit interface for the test
 st.write(
     """
