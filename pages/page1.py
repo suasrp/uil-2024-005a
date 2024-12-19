@@ -17,29 +17,39 @@ ALPHABET_TESTS = {
     # Add more letters and words...
 }
 
-# Fetch pronunciation using ElevenLabs API
+# Function to play pronunciation using ElevenLabs API (via JavaScript)
 def play_pronunciation_elevenlabs(word):
-    api_url = "https://api.elevenlabs.io/v1/text-to-speech"  # Replace with actual ElevenLabs API endpoint if needed
-    headers = {
-        'Authorization': 'Bearer sk_0da51f2e22e6df77ffd9477976e0d683b88ebcd3571dd99a',  # ElevenLabs API key
-        'Content-Type': 'application/json'
-    }
+    st.components.v1.html(f"""
+    <script>
+        const apiUrl = 'https://api.elevenlabs.io/v1/text-to-speech';
+        const apiKey = 'sk_0da51f2e22e6df77ffd9477976e0d683b88ebcd3571dd99a';  // Replace with your ElevenLabs API Key
+        const data = {{
+            text: '{word}',
+            voice: 'en_us_male',  // Choose voice type
+            output_format: 'mp3'
+        }};
+        
+        fetch(apiUrl, {{
+            method: 'POST',
+            headers: {{
+                'Authorization': 'Bearer ' + apiKey,
+                'Content-Type': 'application/json'
+            }},
+            body: JSON.stringify(data)
+        }})
+        .then(response => response.blob())
+        .then(audioBlob => {{
+            const audioUrl = URL.createObjectURL(audioBlob);
+            const audio = new Audio(audioUrl);
+            audio.play();
+        }})
+        .catch(error => {{
+            console.error('Error:', error);
+            alert('Error fetching pronunciation from ElevenLabs');
+        }});
+    </script>
+    """, height=0)  # Set height=0 to avoid unnecessary space from the script output
 
-    data = {
-        "text": word,  # The word to be pronounced
-        "voice": "en_us_male",  # Select the voice if needed
-        "output_format": "mp3"
-    }
-
-    try:
-        response = requests.post(api_url, json=data, headers=headers)
-        if response.status_code == 200:
-            st.audio(response.content, format='audio/mp3')
-        else:
-            st.error(f"Error fetching pronunciation: {response.status_code}")
-            st.write(response.text)
-    except Exception as e:
-        st.error(f"Error occurred while fetching pronunciation: {e}")
 
 # Fetch pronunciation using ResponsiveVoice (JavaScript approach)
 def play_pronunciation_responsivevoice(word):
