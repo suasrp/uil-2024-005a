@@ -1,12 +1,12 @@
-from navigation import make_sidebar
 import streamlit as st
+import requests
+from navigation import make_sidebar, check_user_inactivity  # Import necessary functions and sidebar functions
 
 # Check for inactivity and logout if necessary
 check_user_inactivity()
 
+# Add sidebar
 make_sidebar()
-
-#########################
 
 st.title(" 📝 3rd-4th Grade - List of Words")
 
