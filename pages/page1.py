@@ -62,45 +62,55 @@ def play_pronunciation_responsivevoice(word):
     </script>
     """.format(word), height=0)  # Set height=0 to hide the script output
 
-# Function to get definition using Wordnik API
-def get_definition(word):
-    api_url = f"https://api.wordnik.com/v4/word.json/{word}/definitions"
-    headers = {
-        'Authorization': 'Bearer cfkfozedk4amxz92tyh1boi833dv7t881s8df9aqvy5e5261h',  # Wordnik API key
-    }
+# Function to fetch definition and example sentence using Wordnik API (via JavaScript)
+def fetch_wordnik_info(word):
+    st.components.v1.html(f"""
+    <script>
+        const word = '{word}';
+        const apiUrl = 'https://api.wordnik.com/v4/word.json/' + word + '/definitions';
+        const apiKey = 'cfkfozedk4amxz92tyh1boi833dv7t881s8df9aqvy5e5261h';  // Replace with your Wordnik API Key
+        
+        // Fetch definition
+        fetch(apiUrl, {{
+            headers: {{
+                'Authorization': 'Bearer ' + apiKey
+            }}
+        }})
+        .then(response => response.json())
+        .then(data => {{
+            let definition = 'No definition found.';
+            if (data.length > 0) {{
+                definition = data[0].text;
+            }}
+            alert('Definition: ' + definition);  // Show definition in alert for now
+        }})
+        .catch(error => {{
+            console.error('Error fetching definition:', error);
+            alert('Error fetching definition from Wordnik');
+        }});
 
-    try:
-        response = requests.get(api_url, headers=headers)
-        if response.status_code == 200:
-            definitions = response.json()
-            if definitions:
-                return definitions[0].get("text", "No definition found.")
-            else:
-                return "No definition found."
-        else:
-            return f"Error fetching definition: {response.status_code}"
-    except Exception as e:
-        return f"Error occurred while fetching definition: {e}"
+        // Fetch example sentence
+        const exampleUrl = 'https://api.wordnik.com/v4/word.json/' + word + '/examples';
+        fetch(exampleUrl, {{
+            headers: {{
+                'Authorization': 'Bearer ' + apiKey
+            }}
+        }})
+        .then(response => response.json())
+        .then(data => {{
+            let example = 'No example sentence found.';
+            if (data.examples && data.examples.length > 0) {{
+                example = data.examples[0].text;
+            }}
+            alert('Example Sentence: ' + example);  // Show example sentence in alert for now
+        }})
+        .catch(error => {{
+            console.error('Error fetching example sentence:', error);
+            alert('Error fetching example sentence from Wordnik');
+        }});
+    </script>
+    """, height=0)
 
-# Function to get example sentence using Wordnik API
-def get_example_sentence(word):
-    api_url = f"https://api.wordnik.com/v4/word.json/{word}/examples"
-    headers = {
-        'Authorization': 'Bearer cfkfozedk4amxz92tyh1boi833dv7t881s8df9aqvy5e5261h',  # Wordnik API key
-    }
-
-    try:
-        response = requests.get(api_url, headers=headers)
-        if response.status_code == 200:
-            examples = response.json().get('examples', [])
-            if examples:
-                return examples[0].get("text", "No example sentence found.")
-            else:
-                return "No example sentence found."
-        else:
-            return f"Error fetching example sentence: {response.status_code}"
-    except Exception as e:
-        return f"Error occurred while fetching example sentence: {e}"
 
 # Streamlit interface for the test
 st.write(
