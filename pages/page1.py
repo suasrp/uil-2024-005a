@@ -41,6 +41,15 @@ st.title("Alphabet Spelling Test")
 
 #################################################################################
 
+    def view_words(self):
+        st.title("List of Words")
+        for letter, word_list in tests.items():
+            st.subheader(f"Words starting with '{letter.upper()}':")
+            st.write(", ".join(word_list))
+        st.button("Back to Main Menu", on_click=self.display_main_menu)
+
+#################################################################################
+
 #letter = st.selectbox("Choose a letter", list(ALPHABET_TESTS.keys()))
 #word_list = ALPHABET_TESTS[letter]
 
