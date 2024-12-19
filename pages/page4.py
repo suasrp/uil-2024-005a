@@ -39,7 +39,7 @@ words = [
     "hemline", "heritage", "hipbone", "Hispanic", "history", "hoarse", "honorable", "hotel", "hottest", "housemaid", "humid",
     "hurricane", "hurried", "igloo", "illness", "image", "immune", "impact", "imprint", "imprison", "incoming",
     "index", "indigo", "infest", "inform", "inherit", "injury", "inkling", "inland", "inquest", "inscribe",
-    "insertion", "insulate", "interest", "intrude", "inventive", "Irish", "iron", "irritate". "jabbed", "jacket", "jailbird",
+    "insertion", "insulate", "interest", "intrude", "inventive", "Irish", "iron", "irritate", "jabbed", "jacket", "jailbird",
     "janitor", "jawbone", "jelly", "journal", "June", "junior", "kennel", "keynote", "kidnap", "kindness", "kitty",
     "knuckle", "kook", "landing", "landscape", "larva", "lately", "latitude", "lavender", "lawyer", "leader",
     "leakage", "leap", "legally", "leotard", "liberty", "ligament", "light-footed", "likeness", "limiting", "linger",
