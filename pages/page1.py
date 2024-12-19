@@ -21,7 +21,7 @@ ALPHABET_TESTS = {
 def play_pronunciation_elevenlabs(word):
     api_url = "https://api.elevenlabs.io/v1/text-to-speech"  # Replace with actual ElevenLabs API endpoint if needed
     headers = {
-        'Authorization': 'Bearer sk_llx-12345678901234567890123456789012345678901234',  # ElevenLabs API key
+        'Authorization': 'Bearer sk_0da51f2e22e6df77ffd9477976e0d683b88ebcd3571dd99a',  # ElevenLabs API key
         'Content-Type': 'application/json'
     }
 
@@ -56,7 +56,7 @@ def play_pronunciation_responsivevoice(word):
 def get_definition(word):
     api_url = f"https://api.wordnik.com/v4/word.json/{word}/definitions"
     headers = {
-        'Authorization': 'Bearer cf12345678901234567890123456789012345678901234567',  # Wordnik API key
+        'Authorization': 'Bearer cfkfozedk4amxz92tyh1boi833dv7t881s8df9aqvy5e5261h',  # Wordnik API key
     }
 
     try:
@@ -76,7 +76,7 @@ def get_definition(word):
 def get_example_sentence(word):
     api_url = f"https://api.wordnik.com/v4/word.json/{word}/examples"
     headers = {
-        'Authorization': 'Bearer cf12345678901234567890123456789012345678901234567',  # Wordnik API key
+        'Authorization': 'Bearer cfkfozedk4amxz92tyh1boi833dv7t881s8df9aqvy5e5261h',  # Wordnik API key
     }
 
     try:
