@@ -18,46 +18,48 @@ ALPHABET_TESTS = {
 }
 
 
-# Fetch pronunciation using ResponsiveVoice (JavaScript approach)
-def play_pronunciation_responsivevoice(word):
-    # Embed the ResponsiveVoice script into Streamlit using components
-    st.components.v1.html("""
-    <script src="https://code.responsivevoice.org/responsivevoice.js?key=Ytp4Wvua"></script>
-    <script>
-        // Use the responsiveVoice JavaScript function to speak the word
-        responsiveVoice.speak("{0}", "UK English Male");
-    </script>
-    """.format(word), height=0)  # Set height=0 to hide the script output
+## Fetch pronunciation using ResponsiveVoice (JavaScript approach)
+#def play_pronunciation_responsivevoice(word):
+    ## Embed the ResponsiveVoice script into Streamlit using components
+    #st.components.v1.html("""
+    #<script src="https://code.responsivevoice.org/responsivevoice.js?key=Ytp4Wvua"></script>
+    #<script>
+        #// Use the responsiveVoice JavaScript function to speak the word
+        #responsiveVoice.speak("{0}", "UK English Male");
+    #</script>
+    #""".format(word), height=0)  # Set height=0 to hide the script output
 
 
-# Streamlit interface for the test
+## Streamlit interface for the test
 st.write(
     """
-# 📝 5th-6th Grade - List of Words
+## 📝 5th-6th Grade - List of Words
     """
 )
 
 st.title("Alphabet Spelling Test")
 
-letter = st.selectbox("Choose a letter", list(ALPHABET_TESTS.keys()))
-word_list = ALPHABET_TESTS[letter]
+#################################################################################
 
-word = st.selectbox("Choose a word", word_list)
+#letter = st.selectbox("Choose a letter", list(ALPHABET_TESTS.keys()))
+#word_list = ALPHABET_TESTS[letter]
 
-# Pronounce word using ElevenLabs
-if st.button("Pronounce word (ElevenLabs)"):
-    play_pronunciation_elevenlabs(word)
+#word = st.selectbox("Choose a word", word_list)
 
-# Pronounce word using ResponsiveVoice
-if st.button("Pronounce word (ResponsiveVoice)"):
-    play_pronunciation_responsivevoice(word)
+## Pronounce word using ElevenLabs
+#if st.button("Pronounce word (ElevenLabs)"):
+    #play_pronunciation_elevenlabs(word)
 
-# Get definition
-if st.button("Get Definition"):
-    definition = get_definition(word)
-    st.write(definition)
+## Pronounce word using ResponsiveVoice
+#if st.button("Pronounce word (ResponsiveVoice)"):
+    #play_pronunciation_responsivevoice(word)
 
-# Get example sentence
-if st.button("Get Example Sentence"):
-    example_sentence = get_example_sentence(word)
-    st.write(example_sentence)
+## Get definition
+#if st.button("Get Definition"):
+    #definition = get_definition(word)
+    #st.write(definition)
+
+## Get example sentence
+#if st.button("Get Example Sentence"):
+    #example_sentence = get_example_sentence(word)
+    #st.write(example_sentence)
