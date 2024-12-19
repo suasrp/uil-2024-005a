@@ -15,7 +15,7 @@ words = [
     "abandon", "absent", "absolute", "academy", "ache",
     "address", "adult", "afterglow", "against", "airliner", "alley", "allspice", "almond", "already", "alter",
     "ambition", "amusement", "ancestor", "annual", "apology", "appetite", "argue", "artist", "assign", "astronomer",
-    "athlete", "autograph", "autumn", "awesome". "backpack", "badger", "bagel", "bait", "banana", "barefoot",
+    "athlete", "autograph", "autumn", "awesome", "backpack", "badger", "bagel", "bait", "banana", "barefoot",
     "bark", "barley", "barrier", "baste", "beaver", "beehive", "beige", "beverage", "beware", "biology",
     "black hole", "blade", "blockage", "blueberry", "blurt", "blush", "borrow", "bottom", "bravery", "bridesmaid",
     "bridle", "bronco", "brownie", "building", "built-in", "buttermilk". "calm", "camel", "canine", "capsule", "California", 
