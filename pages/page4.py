@@ -18,7 +18,7 @@ words = [
     "athlete", "autograph", "autumn", "awesome", "backpack", "badger", "bagel", "bait", "banana", "barefoot",
     "bark", "barley", "barrier", "baste", "beaver", "beehive", "beige", "beverage", "beware", "biology",
     "black hole", "blade", "blockage", "blueberry", "blurt", "blush", "borrow", "bottom", "bravery", "bridesmaid",
-    "bridle", "bronco", "brownie", "building", "built-in", "buttermilk". "calm", "camel", "canine", "capsule", "California", 
+    "bridle", "bronco", "brownie", "building", "built-in", "buttermilk", "calm", "camel", "canine", "capsule", "California", 
     "cashew", "caterpillar", "catwalk", "cautious", "cement", "century", "champion", "charming", "cheerful", "childish",
     "chuckle", "circuit", "circulate", "citizenship", "climate", "coconut", "collection", "comma", "company", "compel",
     "computer", "concern", "condone", "copy", "cousin", "creakier", "creepy", "cricket", "curtsy", "custard".
