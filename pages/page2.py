@@ -156,7 +156,7 @@ def create_tests(words_list):
 tests = create_tests(words)
 
 # Streamlit application
-st.title("5th-6th Grade - Spelling Game")
+st.title("👍 5th-6th Grade - Spelling Game")
 
 def pronounce(word):
     # Embed the ResponsiveVoice script into Streamlit using components
