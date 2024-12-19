@@ -44,37 +44,11 @@ st.write(
     "applause", "aptitude", "aquamarine", "arcade", "arrangement", "assortment",
     "athletic", "attractive", "auditory", "avalanche", "avocado",
 
-    "calculate", "calendar", "canopy", "capitalism", "cardiac", "carnation", "cartridge",
-    "cataract", "cavernous", "centimeter", "ceremony", "chaplain", "charitable", "choppiness",
-    "cinema", "circulation", "circumstance", "clearance", "clergy", "clincher", "closure",
-    "cohesion", "coincidence", "colander", "columnist", "combustion", "commercial",
-    "communicable", "commute", "complaint", "concentrate", "concerto", "confirmed",
-    "congratulate", "connection", "connive", "consultation", "convention", "convoy", "corrode",
-    "corruption", "cramming", "creative", "critical", "curiosity", "currency", "curtail",
-    "damask", "dauntless", "debonair", "debt", "decagon", "deceit", "declining", "deductible",
-    "deflate", "deformity", "dehydrate", "delivery", "democracy", "deodorant", "desperate", 
-    "detestable", "development", "devotion", "diagram", "dictation", "dietary", "diligent",
-    "diorama", "discipline", "discreet", "disembark", "disinfect", "dispensable", "disregard",
-    "district", "divergence", "doleful", "domain", "dominance", "dosage", "downcast", 
-    "draftsman", "drone", "dumpling", "dwindle", "dynasty",
-    "earliest", "earphone", "earsplitting", "editorial", "effective", "egoism", "elaborate", 
-    "elapse", "elasticity", "electromagnet", "eligible", "emanate", "embroidery", "emergency", 
-    "emotional", "employee", "encore", "endear", "endurance", "energetic", "engagement", 
-    "enjoyably", "enormity", "entirety", "environment", "episode", "equate", "erase", 
-    "escapism", "estimate", "ethical", "everglade", "evict", "evidence", "excel", "exercising", 
-    "exhale", "existence", "expenditure", "experience", "exploration", "expound", "extremity",
-    "fabulous", "facedown", "factorization", "famish", "fanciful", "fatalism", "fattened", 
-    "federalist", "feminine", "ferocious", "fiberglass", "fictionalize", "fidelity", "fiercely",
-    "filbert", "filtration", "flagrant", "flatterer", "flounce", "food chain", "footbridge", 
-    "foreclose", "foreign", "forerunner", "forgery", "forgetfulness", "formative", "fortitude",
-    "foyer", "fraction", "fragile", "fragrance", "frankfurter", "fraternity", "freebie",
-    "freedbee", "freedom", "frontier", "functional", "funeral", "furlough", "fuzziness",
-    "gangplank", "gasoline", "gaudy", "gauze", "gearless", "gemstone", "generality", 
-    "generation", "genetic", "geographical", "geometric", "giddy", "gingerly", "glacier", 
-    "gloominess", "gluttony", "goldenrod", "good-humored", "goodwill", "gooseneck", 
-    "gorgeous", "govern", "gradually", "graffiti", "granola", "graphic", "gravitation", 
-    "greasier", "greatness", "greengrocer", "griminess", "grinning", "grizzled", "grouchy", 
-    "guidance", "guidebook", "gumbo", "gurgle",
+
+
+
+
+
     "habitable", "haggard", "hamstring", "handicapped", "handily", "handlebar", "happiness",
     "happy-go-lucky", "harmfully", "hatchery", "hauntingly", "heatedly", "heather",
     "heatstroke", "hedgehog", "heighten", "henceforth", "hepatitis", "herbicide","hexagon", 
@@ -173,6 +147,67 @@ st.write(
     "boomerang", "botulism", "boulevard", "bountiful", "braggart", "braille",
     "brainstorm", "brilliance", "brisket", "brooch", "buffered", "buffoonery",
     "bulbous", "bureau", "burglarize",
+    
+    """
+)
+
+st.write(
+    """
+ (C)"calculate", "calendar", "canopy", "capitalism", "cardiac", "carnation", "cartridge",
+    "cataract", "cavernous", "centimeter", "ceremony", "chaplain", "charitable", "choppiness",
+    "cinema", "circulation", "circumstance", "clearance", "clergy", "clincher", "closure",
+    "cohesion", "coincidence", "colander", "columnist", "combustion", "commercial",
+    "communicable", "commute", "complaint", "concentrate", "concerto", "confirmed",
+    "congratulate", "connection", "connive", "consultation", "convention", "convoy", "corrode",
+    "corruption", "cramming", "creative", "critical", "curiosity", "currency", "curtail",
+    
+    """
+)
+
+st.write(
+    """
+ (D)"damask", "dauntless", "debonair", "debt", "decagon", "deceit", "declining", "deductible",
+    "deflate", "deformity", "dehydrate", "delivery", "democracy", "deodorant", "desperate", 
+    "detestable", "development", "devotion", "diagram", "dictation", "dietary", "diligent",
+    "diorama", "discipline", "discreet", "disembark", "disinfect", "dispensable", "disregard",
+    "district", "divergence", "doleful", "domain", "dominance", "dosage", "downcast", 
+    "draftsman", "drone", "dumpling", "dwindle", "dynasty",
+    
+    """
+)
+
+st.write(
+    """
+ (E)"earliest", "earphone", "earsplitting", "editorial", "effective", "egoism", "elaborate", 
+    "elapse", "elasticity", "electromagnet", "eligible", "emanate", "embroidery", "emergency", 
+    "emotional", "employee", "encore", "endear", "endurance", "energetic", "engagement", 
+    "enjoyably", "enormity", "entirety", "environment", "episode", "equate", "erase", 
+    "escapism", "estimate", "ethical", "everglade", "evict", "evidence", "excel", "exercising", 
+    "exhale", "existence", "expenditure", "experience", "exploration", "expound", "extremity",
+    
+    """
+)
+
+st.write(
+    """
+ (F)"fabulous", "facedown", "factorization", "famish", "fanciful", "fatalism", "fattened", 
+    "federalist", "feminine", "ferocious", "fiberglass", "fictionalize", "fidelity", "fiercely",
+    "filbert", "filtration", "flagrant", "flatterer", "flounce", "food chain", "footbridge", 
+    "foreclose", "foreign", "forerunner", "forgery", "forgetfulness", "formative", "fortitude",
+    "foyer", "fraction", "fragile", "fragrance", "frankfurter", "fraternity", "freebie",
+    "freedbee", "freedom", "frontier", "functional", "funeral", "furlough", "fuzziness",
+    
+    """
+)
+
+st.write(
+    """
+ (G)"gangplank", "gasoline", "gaudy", "gauze", "gearless", "gemstone", "generality", 
+    "generation", "genetic", "geographical", "geometric", "giddy", "gingerly", "glacier", 
+    "gloominess", "gluttony", "goldenrod", "good-humored", "goodwill", "gooseneck", 
+    "gorgeous", "govern", "gradually", "graffiti", "granola", "graphic", "gravitation", 
+    "greasier", "greatness", "greengrocer", "griminess", "grinning", "grizzled", "grouchy", 
+    "guidance", "guidebook", "gumbo", "gurgle",
     
     """
 )
