@@ -56,7 +56,7 @@ words = [
     "particle", "pastry", "pasture", "patrolman", "peach", "peacock", "pecan", "pedicure", "percent", "perky",
     "perplex", "perspire", "phonics", "phrase", "physical", "pierce", "pledge", "pliable", "pointless", "positive",
     "poultice", "preacher", "precious", "predict", "priceless", "primary", "prosper", "proverb", "purebred", "quail",
-    "quaint", "quart", "quash", "quest", "quibbling", "quilt", "quirk", "quite", "quoted". "radar",
+    "quaint", "quart", "quash", "quest", "quibbling", "quilt", "quirk", "quite", "quoted", "radar",
     "radio", "raggedy", "raisin", "readable", "rebate", "recess", "recollect", "refashion", "regardful", "register",
     "release", "relic", "remedy", "reporter", "reptile", "respond", "retail", "retreat", "revenge", "rhino",
     "riflery", "romance", "rooster", "rotating", "rough", "rowdy", "ruby", "rudeness", "rust", "sacred",
