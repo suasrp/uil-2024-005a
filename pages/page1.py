@@ -43,14 +43,7 @@ st.write(
     "annex", "antibacterial", "antibiotic", "anxiety", "apparition", "appease",
     "applause", "aptitude", "aquamarine", "arcade", "arrangement", "assortment",
     "athletic", "attractive", "auditory", "avalanche", "avocado",
-    "badminton", "balky", "Ballyhoo", "barbarian", "bareback", "bargain", "barrette",
-    "bashfulness", "beacon", "bedazzle", "bedridden", "beforehand", "behavior",
-    "believable", "beneficial", "benevolent", "biannual", "bicultural", "bicycle",
-    "billionaire", "bimonthly", "biodiversity", "bionics", "birthmark", "blamable",
-    "blarney", "blissful", "blistering", "bluebonnet", "bolster", "bonfire",
-    "boomerang", "botulism", "boulevard", "bountiful", "braggart", "braille",
-    "brainstorm", "brilliance", "brisket", "brooch", "buffered", "buffoonery",
-    "bulbous", "bureau", "burglarize",
+
     "calculate", "calendar", "canopy", "capitalism", "cardiac", "carnation", "cartridge",
     "cataract", "cavernous", "centimeter", "ceremony", "chaplain", "charitable", "choppiness",
     "cinema", "circulation", "circumstance", "clearance", "clergy", "clincher", "closure",
@@ -172,7 +165,15 @@ st.write(
 
 st.write(
     """
- 📝 5th-6th Grade - List of Words
+ (B)"badminton", "balky", "Ballyhoo", "barbarian", "bareback", "bargain", "barrette",
+    "bashfulness", "beacon", "bedazzle", "bedridden", "beforehand", "behavior",
+    "believable", "beneficial", "benevolent", "biannual", "bicultural", "bicycle",
+    "billionaire", "bimonthly", "biodiversity", "bionics", "birthmark", "blamable",
+    "blarney", "blissful", "blistering", "bluebonnet", "bolster", "bonfire",
+    "boomerang", "botulism", "boulevard", "bountiful", "braggart", "braille",
+    "brainstorm", "brilliance", "brisket", "brooch", "buffered", "buffoonery",
+    "bulbous", "bureau", "burglarize",
+    
     """
 )
 
