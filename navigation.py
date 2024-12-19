@@ -22,8 +22,6 @@ def make_sidebar():
         st.write("")
 
         if st.session_state.get("logged_in", False):
-            st.page_link("pages/page5.py", label="7th-8th Grade - 📝List of Words", icon="🔹")
-            st.page_link("pages/page6.py", label="7th-8th Grade - 👍Spelling Game", icon="🔸")
             st.page_link("pages/page1.py", label="5th-6th Grade - 📝List of Words", icon="🔹")
             st.page_link("pages/page2.py", label="5th-6th Grade - 👍Spelling Game", icon="🔸")
             st.page_link("pages/page3.py", label="3rd-4th Grade - 📝List of Words", icon="🔹")
