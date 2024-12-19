@@ -25,7 +25,7 @@ words = [
     "dairy", "dazzled", "deaden", "decaf", "decent", "decimal", "decline", "dentist", "dependable", "desktop",
     "dessert", "develop", "diary", "dipper", "direction", "disappoint", "disease", "dishonest", "dismiss", "dispute",
     "distrust", "dizzy", "doggy", "dose", "downwind", "dramatic", "dribble", "drinkable", "drudge", "duet".
-    )"eagle", "earnings", "easiest", "easygoing", "echo", "economical", "edition", "educate", "eggplant", "either",
+    "eagle", "earnings", "easiest", "easygoing", "echo", "economical", "edition", "educate", "eggplant", "either",
     "elderly", "electrify", "element", "elevator", "elude", "emotion", "empower", "enable", "ending", "energy",
     "entirely", "entrap", "entry", "error", "essay", "esteem", "ever", "example", "exchange", "exercise",
     "export", "eye-catching", "eyelash". "factual", "falcon", "famous", "farmstead", "faucet", "fearless", "ferret",
