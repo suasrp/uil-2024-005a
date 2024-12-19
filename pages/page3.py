@@ -1,6 +1,9 @@
 from navigation import make_sidebar
 import streamlit as st
 
+# Check for inactivity and logout if necessary
+check_user_inactivity()
+
 make_sidebar()
 
 #########################
