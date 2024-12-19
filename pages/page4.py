@@ -31,7 +31,7 @@ words = [
     "export", "eye-catching", "eyelash", "factual", "falcon", "famous", "farmstead", "faucet", "fearless", "ferret",
     "festival", "fidget", "field", "filmstrip", "fizzling", "flavor", "fleece", "foliage", "footstep", "foresight",
     "forestry", "formula", "forthright", "framed", "frank", "freaky", "frightful", "frown", "fudge", "funnel",
-    "furry". "gadget", "gala", "galaxy", "garden", "garment", "garnish", "gathering", "generous", "genius",
+    "furry", "gadget", "gala", "galaxy", "garden", "garment", "garnish", "gathering", "generous", "genius",
     "gentlefolk", "geology", "German", "germfree", "giggle", "giraffe", "glassblower", "glimpse", "gloomy", "goalpost", "goggles",
     "gosling", "grader", "granite", "graph", "gravity", "gravy", "greedy", "griddle", "grime", "grungy",
     "guardian", "guide", "guitar", "gummy", "gusto", "hairdresser", "hallway", "halt", "handful", "handsaw",
