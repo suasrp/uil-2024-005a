@@ -33,7 +33,7 @@ ALPHABET_TESTS = {
 # Streamlit interface for the test
 st.write(
     """
- 📝 5th-6th Grade - List of Words
+ #📝 5th-6th Grade - List of Words
     'a': ["abbreviate", "abnormality"],
     'b': ["badminton", "balky"],
     'c': ["calculate", "calendar"],
